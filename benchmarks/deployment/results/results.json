@@ -1,0 +1,271 @@
+{
+  "artifact": {
+    "total_bytes": 4883777,
+    "files": {
+      "model.joblib": 4527544,
+      "report.html": 338294,
+      "metadata.json": 10076,
+      "predict.py": 4591,
+      "drift_check.py": 2443,
+      "Dockerfile": 446,
+      "requirements.txt": 383
+    },
+    "pinned_requirements": [
+      "scikit-learn==1.9.0",
+      "pandas==3.0.5",
+      "numpy==2.4.6",
+      "joblib==1.5.3",
+      "catboost==1.2.10",
+      "lightgbm==4.7.0"
+    ],
+    "champion": "Stacked(3)"
+  },
+  "latency": {
+    "single_row": {
+      "p50_ms": 28.43,
+      "p95_ms": 39.24,
+      "mean_ms": 31.47,
+      "n_requests": 200,
+      "rows_per_request": 1
+    },
+    "batch_1000": {
+      "p50_ms": 58.45,
+      "p95_ms": 70.81,
+      "mean_ms": 61.48,
+      "n_requests": 40,
+      "rows_per_request": 1000
+    }
+  },
+  "closures": {
+    "engine_artifact_as_pinned": {
+      "n_packages": 21,
+      "total_bytes": 208561048,
+      "largest": [
+        [
+          "catboost",
+          "1.2.10",
+          97159502
+        ],
+        [
+          "scipy",
+          "1.17.1",
+          35349300
+        ],
+        [
+          "numpy",
+          "2.4.6",
+          16918164
+        ],
+        [
+          "pandas",
+          "3.0.5",
+          11323634
+        ],
+        [
+          "matplotlib",
+          "3.11.1",
+          10024922
+        ],
+        [
+          "plotly",
+          "6.9.0",
+          9909646
+        ],
+        [
+          "scikit-learn",
+          "1.9.0",
+          9281411
+        ],
+        [
+          "pillow",
+          "12.3.0",
+          6934408
+        ]
+      ]
+    },
+    "engine_artifact_sklearn_only_champion": {
+      "n_packages": 9,
+      "total_bytes": 73902190,
+      "largest": [
+        [
+          "scipy",
+          "1.17.1",
+          35349300
+        ],
+        [
+          "numpy",
+          "2.4.6",
+          16918164
+        ],
+        [
+          "pandas",
+          "3.0.5",
+          11323634
+        ],
+        [
+          "scikit-learn",
+          "1.9.0",
+          9281411
+        ],
+        [
+          "narwhals",
+          "2.24.0",
+          461030
+        ],
+        [
+          "joblib",
+          "1.5.3",
+          309071
+        ],
+        [
+          "python-dateutil",
+          "2.9.0.post0",
+          229892
+        ],
+        [
+          "threadpoolctl",
+          "3.6.0",
+          18638
+        ]
+      ]
+    },
+    "autogluon_base": {
+      "n_packages": 36,
+      "total_bytes": 162362954,
+      "largest": [
+        [
+          "pyarrow",
+          "20.0.0",
+          42301124
+        ],
+        [
+          "scipy",
+          "1.16.3",
+          35899798
+        ],
+        [
+          "numpy",
+          "2.3.5",
+          16897903
+        ],
+        [
+          "botocore",
+          "1.43.62",
+          15502622
+        ],
+        [
+          "pandas",
+          "2.3.3",
+          12789281
+        ],
+        [
+          "scikit-learn",
+          "1.7.2",
+          9715424
+        ],
+        [
+          "matplotlib",
+          "3.10.9",
+          8777092
+        ],
+        [
+          "pillow",
+          "12.3.0",
+          6934408
+        ]
+      ]
+    },
+    "autogluon_gbm": {
+      "n_packages": 43,
+      "total_bytes": 692798396,
+      "largest": [
+        [
+          "nvidia-nccl-cu12",
+          "2.30.7",
+          303361239
+        ],
+        [
+          "xgboost",
+          "3.1.3",
+          115926894
+        ],
+        [
+          "catboost",
+          "1.2.10",
+          97159502
+        ],
+        [
+          "pyarrow",
+          "20.0.0",
+          42301124
+        ],
+        [
+          "scipy",
+          "1.16.3",
+          35899798
+        ],
+        [
+          "numpy",
+          "2.3.5",
+          16897903
+        ],
+        [
+          "botocore",
+          "1.43.62",
+          15502622
+        ],
+        [
+          "pandas",
+          "2.3.3",
+          12789281
+        ]
+      ]
+    },
+    "autogluon_benchmark_env": {
+      "n_packages": 124,
+      "total_bytes": 4526801234,
+      "largest": [
+        [
+          "torch",
+          "2.9.1",
+          899821446
+        ],
+        [
+          "nvidia-cudnn-cu12",
+          "9.10.2.21",
+          706758467
+        ],
+        [
+          "nvidia-cublas-cu12",
+          "12.8.4.1",
+          594346921
+        ],
+        [
+          "nvidia-nccl-cu12",
+          "2.27.5",
+          322348229
+        ],
+        [
+          "nvidia-cusparse-cu12",
+          "12.5.8.93",
+          288216466
+        ],
+        [
+          "nvidia-cusparselt-cu12",
+          "0.7.1",
+          287193691
+        ],
+        [
+          "nvidia-cusolver-cu12",
+          "11.7.3.90",
+          267506905
+        ],
+        [
+          "nvidia-cufft-cu12",
+          "11.3.3.83",
+          193118695
+        ]
+      ]
+    }
+  }
+}

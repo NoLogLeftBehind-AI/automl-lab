@@ -1,0 +1,63 @@
+{
+  "default_pruning": {
+    "force_keep_columns": [],
+    "RMSE": 538.3500868484183,
+    "MAE": 279.2726988225734,
+    "R2": 0.9818589453349079,
+    "champion": "Stacked(3)",
+    "deployment_pick": "LightGBM_logy",
+    "features": [
+      "cut",
+      "color",
+      "clarity",
+      "depth",
+      "table",
+      "y"
+    ],
+    "correlation_drops": [
+      "x",
+      "carat",
+      "z"
+    ],
+    "fit_seconds": 1372.6
+  },
+  "carat_protected": {
+    "force_keep_columns": [
+      "carat"
+    ],
+    "RMSE": 520.0384044876853,
+    "MAE": 263.567686022162,
+    "R2": 0.9830720724564521,
+    "champion": "Stacked(3)",
+    "deployment_pick": "CatBoost",
+    "features": [
+      "carat",
+      "cut",
+      "color",
+      "clarity",
+      "depth",
+      "table"
+    ],
+    "correlation_drops": [
+      "x",
+      "y",
+      "z"
+    ],
+    "fit_seconds": 1173.9
+  },
+  "_summary": {
+    "autogluon_best_rmse": 516.0116130447523,
+    "rmse_cost_of_pruning_carat": 18.311682360733016,
+    "gap_to_autogluon_default_pct": 4.3290641603697155,
+    "gap_to_autogluon_carat_kept_pct": 0.7803683756597518,
+    "share_of_gap_explained_by_pruning_pct": 81.9737396640223
+  },
+  "_meta": {
+    "seed": 42,
+    "when_utc": "2026-08-01T13:45:00Z",
+    "sklearn": "1.9.0",
+    "pandas": "3.0.5",
+    "hardware": "4 CPU cores, 15 GB RAM, no GPU",
+    "note": "both runs at the same commit; default_pruning reproduces the committed 2026-07-30 demo report to 4 decimals"
+  }
+}

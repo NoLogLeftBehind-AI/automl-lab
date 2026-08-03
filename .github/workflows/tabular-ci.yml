@@ -1,0 +1,53 @@
+name: tabular-ci
+
+on:
+  push:
+    paths:
+      - "tabular/**"
+      - "benchmarks/tabular/**"
+      - "ruff.toml"
+      - ".github/workflows/tabular-ci.yml"
+  pull_request:
+    paths:
+      - "tabular/**"
+      - "benchmarks/tabular/**"
+      - "ruff.toml"
+      - ".github/workflows/tabular-ci.yml"
+  workflow_dispatch:
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install ruff mypy
+      - run: ruff check tabular benchmarks/tabular
+      - run: mypy tabular/automl --ignore-missing-imports
+
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      matrix:
+        # the only CI failure this project has seen was a pandas 2-vs-3
+        # behavioral difference — so both majors are tested on every push
+        pandas: ["~=2.2", "~=3.0"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: tabular/requirements.txt
+      - name: Install (editable package + full extras)
+        run: |
+          pip install -r tabular/requirements.txt
+          pip install -e ./tabular
+          pip install "pandas${{ matrix.pandas }}"
+      - name: Run engine test suite
+        run: python -m pytest tabular/tests -q

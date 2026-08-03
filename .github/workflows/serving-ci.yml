@@ -1,0 +1,41 @@
+name: serving-ci
+
+on:
+  push:
+    paths:
+      - "serving/**"
+      - "tabular/automl/**"
+      - "ruff.toml"
+      - ".github/workflows/serving-ci.yml"
+  pull_request:
+    paths:
+      - "serving/**"
+      - "tabular/automl/**"
+      - "ruff.toml"
+      - ".github/workflows/serving-ci.yml"
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: serving/requirements.txt
+      - name: Lint and type-check
+        run: |
+          pip install ruff mypy
+          ruff check serving
+          mypy serving/app.py --ignore-missing-imports
+      - name: Install dependencies
+        run: |
+          pip install -r serving/requirements.txt
+          pip install -e ./tabular
+          pip install xgboost lightgbm optuna matplotlib scipy
+          pip install pytest httpx   # test-only deps, kept out of the image
+      - name: Run service test suite
+        run: python -m pytest serving/tests -q

@@ -1,0 +1,53 @@
+name: forecasting-ci
+
+on:
+  push:
+    paths:
+      - "forecasting/**"
+      - "benchmarks/forecasting/**"
+      - "ruff.toml"
+      - ".github/workflows/forecasting-ci.yml"
+  pull_request:
+    paths:
+      - "forecasting/**"
+      - "benchmarks/forecasting/**"
+      - "ruff.toml"
+      - ".github/workflows/forecasting-ci.yml"
+  workflow_dispatch:
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install ruff mypy
+      - run: ruff check forecasting benchmarks/forecasting
+      - run: mypy forecasting/autofc --ignore-missing-imports
+
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      matrix:
+        # the only CI failure this project has seen was a pandas 2-vs-3
+        # behavioral difference — so both majors are tested on every push
+        pandas: ["~=2.2", "~=3.0"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: forecasting/requirements.txt
+      - name: Install (editable package + full extras)
+        run: |
+          pip install -r forecasting/requirements.txt
+          pip install -e ./forecasting
+          pip install "pandas${{ matrix.pandas }}"
+      - name: Run forecasting test suite
+        run: python -m pytest forecasting/tests -q

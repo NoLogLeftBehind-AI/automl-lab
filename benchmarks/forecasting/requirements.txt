@@ -1,0 +1,5 @@
+# Benchmark environment = the forecasting engine's environment + challengers.
+-r ../../forecasting/requirements.txt
+statsforecast>=2.0
+autogluon.timeseries>=1.5
+holidays>=0.50

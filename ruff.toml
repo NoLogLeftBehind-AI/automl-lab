@@ -1,0 +1,19 @@
+# Lint the engine/benchmark source; generated artifact folders and executed
+# notebooks are outputs, not source.
+extend-exclude = [
+    "**/artifacts_*",
+    # the engines' default artifact_dir names — a plain `AutoML(...).run(df)`
+    # from the repo root drops one of these, and the generated scorers legally
+    # import after a sys.path insert (E402). Excluded by name so `ruff check .`
+    # is clean outside a git checkout too, where .gitignore does not apply.
+    "**/automl_artifacts",
+    "**/forecast_artifacts",
+    "*.ipynb",
+]
+
+[lint]
+# Rule families are pinned EXPLICITLY: correctness (pycodestyle errors +
+# pyflakes), not style. A ruff release once broadened its default selection
+# and turned CI red overnight on rules this code was never validated against —
+# explicit selection keeps lint behavior stable across ruff versions.
+select = ["E4", "E7", "E9", "F"]

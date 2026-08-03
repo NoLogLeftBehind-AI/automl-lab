@@ -1,0 +1,19 @@
+# Training environment for the forecasting engine (inference deps are pinned
+# separately into each exported artifact's own requirements.txt).
+pandas>=2.2
+numpy>=1.26
+scipy>=1.11
+statsmodels>=0.14
+prophet>=1.1.5
+scikit-learn>=1.6,<2
+matplotlib>=3.8
+joblib>=1.3
+# global ML forecasters (the engine degrades gracefully if one is missing)
+lightgbm>=4.2
+xgboost>=2.0
+# holiday calendars (previously satisfied only transitively via prophet)
+holidays>=0.50
+# demo notebook / tests
+jupyter
+pytest
+pyarrow>=15

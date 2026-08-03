@@ -1,0 +1,86 @@
+{
+  "autofc": {
+    "MASE": 0.9398,
+    "sMAPE": 0.0654,
+    "WAPE": 0.0643,
+    "RMSE": 541.2971,
+    "fit_seconds": 92.1,
+    "champion": "Blend(XGBoost_global, Prophet, LightGBM_global)",
+    "note": "leaderboard champion over its full roster",
+    "_meta": {
+      "when_utc": "2026-07-12T14:11:18Z",
+      "horizon": 28,
+      "n_folds": 3,
+      "statsforecast": "2.0.1"
+    }
+  },
+  "sf-autoarima": {
+    "MASE": 1.2681,
+    "sMAPE": 0.0997,
+    "WAPE": 0.0949,
+    "RMSE": 805.3823,
+    "fit_seconds": 192.8,
+    "_meta": {
+      "when_utc": "2026-07-12T14:14:32Z",
+      "horizon": 28,
+      "n_folds": 3,
+      "statsforecast": "2.0.1"
+    }
+  },
+  "sf-autoets": {
+    "MASE": 1.3212,
+    "sMAPE": 0.1025,
+    "WAPE": 0.0976,
+    "RMSE": 775.5975,
+    "fit_seconds": 9.1,
+    "_meta": {
+      "when_utc": "2026-07-12T14:14:41Z",
+      "horizon": 28,
+      "n_folds": 3,
+      "statsforecast": "2.0.1"
+    }
+  },
+  "sf-autotheta": {
+    "MASE": 1.3197,
+    "sMAPE": 0.1024,
+    "WAPE": 0.0975,
+    "RMSE": 768.4436,
+    "fit_seconds": 6.0,
+    "_meta": {
+      "when_utc": "2026-07-12T14:14:47Z",
+      "horizon": 28,
+      "n_folds": 3,
+      "statsforecast": "2.0.1"
+    }
+  },
+  "ag-ts-medium": {
+    "MASE": 1.1669,
+    "sMAPE": 0.0871,
+    "WAPE": 0.0845,
+    "RMSE": 659.3163,
+    "fit_seconds": 429.5,
+    "champion": "WeightedEnsemble",
+    "note": "Chronos excluded (no Hugging Face access in this environment)",
+    "_meta": {
+      "when_utc": "2026-07-12T14:21:57Z",
+      "horizon": 28,
+      "n_folds": 3,
+      "statsforecast": "2.0.1"
+    }
+  },
+  "ag-ts-best": {
+    "MASE": 1.0461,
+    "sMAPE": 0.0766,
+    "WAPE": 0.075,
+    "RMSE": 587.6415,
+    "fit_seconds": 1254.4,
+    "champion": "WeightedEnsemble",
+    "note": "Chronos excluded (no Hugging Face access in this environment)",
+    "_meta": {
+      "when_utc": "2026-07-12T14:42:52Z",
+      "horizon": 28,
+      "n_folds": 3,
+      "statsforecast": "2.0.1"
+    }
+  }
+}

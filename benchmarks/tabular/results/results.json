@@ -1,0 +1,131 @@
+{
+  "adult": {
+    "baseline": {
+      "LogLoss": 0.5503796108017605,
+      "ROC_AUC": 0.5,
+      "fit_seconds": 0.0,
+      "_meta": {
+        "seed": 42,
+        "when_utc": "2026-07-11T21:05:09Z",
+        "sklearn": "1.7.2",
+        "autogluon": "1.5.0"
+      }
+    },
+    "xgb-default": {
+      "LogLoss": 0.2720977939993704,
+      "ROC_AUC": 0.9306093013458692,
+      "fit_seconds": 0.3,
+      "_meta": {
+        "seed": 42,
+        "when_utc": "2026-07-11T21:05:10Z",
+        "sklearn": "1.7.2",
+        "autogluon": "1.5.0"
+      }
+    },
+    "engine": {
+      "LogLoss": 0.2657748180572471,
+      "ROC_AUC": 0.9342730319985382,
+      "fit_seconds": 1344.9,
+      "champion": "Voting(3)",
+      "_meta": {
+        "seed": 42,
+        "when_utc": "2026-07-11T21:27:34Z",
+        "sklearn": "1.7.2",
+        "autogluon": "1.5.0"
+      }
+    },
+    "autogluon-medium": {
+      "LogLoss": 0.264222805728879,
+      "ROC_AUC": 0.9348887678431026,
+      "fit_seconds": 147.8,
+      "champion": "WeightedEnsemble_L2",
+      "n_models": 11,
+      "_meta": {
+        "seed": 42,
+        "when_utc": "2026-07-11T21:30:03Z",
+        "sklearn": "1.7.2",
+        "autogluon": "1.5.0"
+      }
+    },
+    "autogluon-best": {
+      "LogLoss": 0.2636185130697891,
+      "ROC_AUC": 0.9353128126118943,
+      "fit_seconds": 1298.7,
+      "champion": "WeightedEnsemble_L2",
+      "n_models": 12,
+      "_meta": {
+        "seed": 42,
+        "when_utc": "2026-07-11T21:51:44Z",
+        "sklearn": "1.7.2",
+        "autogluon": "1.5.0"
+      }
+    }
+  },
+  "diamonds": {
+    "baseline": {
+      "RMSE": 3997.0130344433433,
+      "MAE": 3041.0731470146015,
+      "R2": -9.408716963532626e-06,
+      "fit_seconds": 0.0,
+      "_meta": {
+        "seed": 42,
+        "when_utc": "2026-07-11T21:51:44Z",
+        "sklearn": "1.7.2",
+        "autogluon": "1.5.0"
+      }
+    },
+    "xgb-default": {
+      "RMSE": 553.7170188257585,
+      "MAE": 277.9268349715686,
+      "R2": 0.9808085096867264,
+      "fit_seconds": 0.6,
+      "_meta": {
+        "seed": 42,
+        "when_utc": "2026-07-11T21:51:45Z",
+        "sklearn": "1.7.2",
+        "autogluon": "1.5.0"
+      }
+    },
+    "engine": {
+      "RMSE": 538.3311116161593,
+      "MAE": 280.77215272454634,
+      "R2": 0.9818602241483327,
+      "fit_seconds": 1608.3,
+      "champion": "Stacked(3)",
+      "_meta": {
+        "seed": 42,
+        "when_utc": "2026-07-11T22:18:33Z",
+        "sklearn": "1.7.2",
+        "autogluon": "1.5.0"
+      }
+    },
+    "autogluon-medium": {
+      "RMSE": 519.9793458887075,
+      "MAE": 256.1682997092914,
+      "R2": 0.9830759171067993,
+      "fit_seconds": 338.1,
+      "champion": "WeightedEnsemble_L2",
+      "n_models": 9,
+      "_meta": {
+        "seed": 42,
+        "when_utc": "2026-07-11T22:24:17Z",
+        "sklearn": "1.7.2",
+        "autogluon": "1.5.0"
+      }
+    },
+    "autogluon-best": {
+      "RMSE": 516.0116130447523,
+      "MAE": 255.55021787321317,
+      "R2": 0.9833332121057672,
+      "fit_seconds": 1293.0,
+      "champion": "WeightedEnsemble_L3",
+      "n_models": 13,
+      "_meta": {
+        "seed": 42,
+        "when_utc": "2026-07-11T22:46:05Z",
+        "sklearn": "1.7.2",
+        "autogluon": "1.5.0"
+      }
+    }
+  }
+}

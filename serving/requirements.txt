@@ -1,0 +1,10 @@
+# Service runtime only (tests additionally need: pip install pytest httpx).
+# The artifact's own pinned requirements.txt lists the model libraries it
+# needs (xgboost/lightgbm/catboost as applicable) — install both:
+#   pip install -r requirements.txt -r /path/to/artifact/requirements.txt
+fastapi>=0.110
+uvicorn>=0.29
+pandas>=2.2
+numpy>=1.26
+scikit-learn>=1.6,<2
+joblib>=1.3

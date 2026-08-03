@@ -1,0 +1,3 @@
+# Benchmark environment = the tabular engine's environment + AutoGluon.
+-r ../../tabular/requirements.txt
+autogluon.tabular[lightgbm,xgboost,catboost,fastai]>=1.5
